@@ -1,0 +1,18 @@
+﻿Functionality
+* Manage revisions (Subversion/Git)
+* Count territory
+* Identify and count prisoners
+* Implement simple influence
+  - static and dynamic influance
+  - square
+* Implement simple pattern
+  - neighbours pattern with rich state (10^4*3)
+* Train pattern
+* Combine pattern with influence
+* Implement tree search
+
+Implemented
+* Show winner and score
+* Resign
+* SuperKo
+* Ko

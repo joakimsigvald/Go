@@ -1,0 +1,5 @@
+C:\Development\Go\Go\bin\Debug\Go.exe
+C:\Development\Go\Go\bin\Debug\Go.pdb
+C:\Development\Go\Go\obj\x86\Debug\Go.exe
+C:\Development\Go\Go\obj\x86\Debug\Go.pdb
+C:\Development\Go\Go\obj\x86\Debug\Go.csprojResolveAssemblyReference.cache

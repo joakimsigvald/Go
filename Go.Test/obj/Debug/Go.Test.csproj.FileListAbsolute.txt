@@ -1,0 +1,11 @@
+C:\Development\Go\Go.Test\obj\Debug\Go.Test.csprojResolveAssemblyReference.cache
+C:\Development\Go\Go.Test\bin\Debug\Go.Test.dll
+C:\Development\Go\Go.Test\bin\Debug\Go.Test.pdb
+C:\Development\Go\Go.Test\bin\Debug\NSubstitute.dll
+C:\Development\Go\Go.Test\bin\Debug\nunit.framework.dll
+C:\Development\Go\Go.Test\bin\Debug\NSubstitute.xml
+C:\Development\Go\Go.Test\bin\Debug\nunit.framework.xml
+C:\Development\Go\Go.Test\obj\Debug\Go.Test.dll
+C:\Development\Go\Go.Test\obj\Debug\Go.Test.pdb
+C:\Development\Go\Go.Test\bin\Debug\Engine.dll
+C:\Development\Go\Go.Test\bin\Debug\Engine.pdb

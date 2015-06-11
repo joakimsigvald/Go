@@ -1,0 +1,4 @@
+C:\Development\Go\Utils\bin\Debug\Utils.dll
+C:\Development\Go\Utils\bin\Debug\Utils.pdb
+C:\Development\Go\Utils\obj\Debug\Utils.dll
+C:\Development\Go\Utils\obj\Debug\Utils.pdb
