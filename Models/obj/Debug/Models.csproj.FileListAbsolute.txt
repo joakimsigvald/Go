@@ -2,3 +2,7 @@ C:\Development\Go\Models\bin\Debug\Models.dll
 C:\Development\Go\Models\bin\Debug\Models.pdb
 C:\Development\Go\Models\obj\Debug\Models.dll
 C:\Development\Go\Models\obj\Debug\Models.pdb
+C:\Development\GitHub\Go\Models\bin\Debug\Models.dll
+C:\Development\GitHub\Go\Models\bin\Debug\Models.pdb
+C:\Development\GitHub\Go\Models\obj\Debug\Models.dll
+C:\Development\GitHub\Go\Models\obj\Debug\Models.pdb

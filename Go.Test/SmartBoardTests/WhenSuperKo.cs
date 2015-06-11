@@ -5,45 +5,42 @@ using NUnit.Framework;
 namespace Go.Engine.Test.SmartBoardTests
 {
     [TestFixture]
-    public class WhenSuperKo
+    public class WhenSuperKo : SmartBoardTestBase
     {
-        readonly Position[] _blackRepeatedMoves = {
+        readonly Move[] _blackRepeatedMoves = new[]{
                 new Position(4, 2)
                 , new Position(4, 6)
                 , new Position(4, 4)
-                };
+                }.Select(Move.Black).ToArray();
 
-        readonly Position[] _whiteRepeatedMoves = {
+        readonly Move[] _whiteRepeatedMoves = new[]{
                 new Position(3, 4)
                 , new Position(3, 2) //<-- capturing sequence starts here
                 , new Position(3, 6)
-                };
-
-        private SmartBoard _smartBoard;
+                }.Select(Move.White).ToArray();
 
         [SetUp]
         public void SetUp()
         {
-            _smartBoard = SmartBoardGenerator.CreateBoard(@"
+            Given(@"
                 ..0A...
                 .1I7B..
                 ..2C..
                 .3H9D..
                 ..4E...
                 .5J8F..
-                ..6G...");
-            for (int i = 0; i < _blackRepeatedMoves.Length - 1; i++)
-            {
-                _smartBoard.MakeMove(Move.Black(_blackRepeatedMoves[i]));
-                _smartBoard.MakeMove(Move.White(_whiteRepeatedMoves[i]));
-            }
-            _smartBoard.MakeMove(Move.Black(_blackRepeatedMoves.Last()));
+                ..6G..."
+                , _blackRepeatedMoves[0]
+                , _whiteRepeatedMoves[0]
+                , _blackRepeatedMoves[1]
+                , _whiteRepeatedMoves[1]
+                , _blackRepeatedMoves[2]);
         }
 
         [Test]
         public void ThenLastMoveOfFirstRepititionIsInvalidIsInvalid()
         {
-            Assert.False(_smartBoard.IsValidPlacement(Move.White(_whiteRepeatedMoves.Last())));
+            Assert.IsFalse(SmartBoard.IsValidPlacement(_whiteRepeatedMoves[2]));
         }
     }
 }

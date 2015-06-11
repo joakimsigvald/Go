@@ -2,3 +2,7 @@ C:\Development\Go\Utils\bin\Debug\Utilities.dll
 C:\Development\Go\Utils\bin\Debug\Utilities.pdb
 C:\Development\Go\Utils\obj\Debug\Utilities.dll
 C:\Development\Go\Utils\obj\Debug\Utilities.pdb
+C:\Development\GitHub\Go\Utils\bin\Debug\Utilities.dll
+C:\Development\GitHub\Go\Utils\bin\Debug\Utilities.pdb
+C:\Development\GitHub\Go\Utils\obj\Debug\Utilities.dll
+C:\Development\GitHub\Go\Utils\obj\Debug\Utilities.pdb

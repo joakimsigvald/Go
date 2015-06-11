@@ -63,6 +63,10 @@
       <Project>{09C0851B-845E-4AAD-8562-09D34B4F5DAE}</Project>
       <Name>Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Robots\Robots.csproj">
+      <Project>{1228F4C9-356B-4117-84E7-159B242C8445}</Project>
+      <Name>Robots</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

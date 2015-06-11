@@ -7,8 +7,7 @@ namespace Go.Gaming
     {
         private readonly ICommunicator _communicator;
 
-        public HumanPlayer(ICommunicator communicator, BoardState color)
-            : base(color)
+        public HumanPlayer(ICommunicator communicator)
         {
             _communicator = communicator;
         }

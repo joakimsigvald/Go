@@ -1,15 +1,22 @@
-﻿using Go.Models;
+﻿using System;
+using Go.Models;
 
 namespace Go.Engine
 {
     public abstract class Player : IPlayer
     {
-        protected Player(BoardState color)
-        {
-            Color = color;
-        }
+        private BoardState _color;
 
-        public BoardState Color { get; private set; }
+        public BoardState Color
+        {
+            get { return _color; }
+            set
+            {
+                if (_color != default(BoardState)) throw new InvalidOperationException("Cannot change color of player");
+                _color = value;
+                if (!_color.IsStoneColor()) throw new InvalidOperationException("Color must be set to a stone color");
+            }
+        }
 
         public Move GetMove(bool isRepeatedRequest = false)
         {

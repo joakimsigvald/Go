@@ -4,27 +4,24 @@ using NUnit.Framework;
 namespace Go.Engine.Test.SmartBoardTests
 {
     [TestFixture]
-    public class WhenThrowInUnderTheStones
+    public class WhenThrowInUnderTheStones : SmartBoardTestBase
     {
-        readonly Position _whiteThrowIn = new Position(1, 1);
-        readonly Position _blackKill = new Position(2, 1);
-
-        private SmartBoard _smartBoard;
+        readonly Move _whiteThrowIn = Move.White(new Position(1, 1));
+        readonly Move _blackKill = Move.Black(new Position(2, 1));
 
         [SetUp]
         public void SetUp()
         {
-            _smartBoard = SmartBoardGenerator.CreateBoard(@"
+            Given(@"
             AB2
             01.
-            ...");
-            _smartBoard.MakeMove(Move.White(_whiteThrowIn));
+            ...", _whiteThrowIn);
         }
 
         [Test]
         public void ThenCaptureIsValid()
         {
-            Assert.That(_smartBoard.IsValidPlacement(Move.Black(_blackKill)));
+            Assert.That(SmartBoard.IsValidPlacement(_blackKill));
         }
     }
 }

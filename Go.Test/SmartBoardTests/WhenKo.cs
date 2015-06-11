@@ -4,18 +4,14 @@ using NUnit.Framework;
 namespace Go.Engine.Test.SmartBoardTests
 {
     [TestFixture]
-    public class WhenKo
+    public class WhenKo : SmartBoardTestBase
     {
-        readonly Position _blackCapture = new Position(4, 3);
-        readonly Position _blackThreat = new Position(1, 1);
-        readonly Position _whiteResponce = new Position(1, 5);
-
-        private SmartBoard _smartBoard;
+        readonly Position _takeKo = new Position(4, 3);
 
         [SetUp]
         public void SetUp()
         {
-            _smartBoard = SmartBoardGenerator.CreateBoard(@"
+            Given(@"
             .....
             ..0A.
             .3D1B
@@ -26,15 +22,16 @@ namespace Go.Engine.Test.SmartBoardTests
         [Test]
         public void ThenImmediateKoCaptureIsInvalid()
         {
-            Assert.False(_smartBoard.IsValidPlacement(Move.Black(_blackCapture)));
+            Assert.False(SmartBoard.IsValidPlacement(Move.Black(_takeKo)));
         }
 
         [Test]
         public void ThenKoCaptureIsValidAfterExchange()
         {
-            _smartBoard.MakeMove(Move.Black(_blackThreat));
-            _smartBoard.MakeMove(Move.White(_whiteResponce));
-            Assert.That(_smartBoard.IsValidPlacement(Move.Black(_blackCapture)));
+            var blackThreat = new Position(1, 1);
+            var whiteResponce = new Position(1, 5);
+            When(Move.Black(blackThreat), Move.White(whiteResponce));
+            Assert.That(SmartBoard.IsValidPlacement(Move.Black(_takeKo)));
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using Go.Engine;
 using Go.Gaming;
-using Go.Models;
+using Go.Robots;
 
 namespace Go.ConsoleApp
 {
@@ -13,9 +13,9 @@ namespace Go.ConsoleApp
             Board board = new Board(size);
             ISmartBoard smartBoard = new SmartBoard(board);
             ICommunicator communicator = new ConsoleCommunicator(board);
-            Player blackPlayer = new HumanPlayer(communicator, BoardState.Black);
-            Player whitePlayer = new ComputerPlayer(smartBoard, BoardState.White);
-            Game game = new Game(smartBoard, communicator, blackPlayer, whitePlayer);
+            Player computer = new SimplePlayer(smartBoard);
+            Player human = new HumanPlayer(communicator);
+            Game game = new Game(smartBoard, communicator, computer, human);
             game.Play();
             GameResult result = game.ComputeResult();
             communicator.ShowGameFinished(result);

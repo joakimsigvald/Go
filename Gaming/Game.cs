@@ -1,5 +1,4 @@
-﻿using System;
-using Go.Engine;
+﻿using Go.Engine;
 using Go.Models;
 
 namespace Go.Gaming
@@ -15,8 +14,8 @@ namespace Go.Gaming
 
         public Game(ISmartBoard smartBoard, ICommunicator communicator, IPlayer blackPlayer, IPlayer whitePlayer)
         {
-            if (blackPlayer.Color != BoardState.Black) throw new ArgumentException("Black player is not black: " + blackPlayer.Color);
-            if (whitePlayer.Color != BoardState.White) throw new ArgumentException("White player is not white: " + whitePlayer.Color);
+            blackPlayer.Color = BoardState.Black;
+            whitePlayer.Color = BoardState.White;
             _smartBoard = smartBoard;
             _communicator = communicator;
             _blackPlayer = blackPlayer;

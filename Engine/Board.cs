@@ -42,11 +42,6 @@ namespace Go.Engine
             return _grid[position.X, position.Y];
         }
 
-        public bool IsInside(Position position)
-        {
-            return position.X > 0 && position.Y > 0 && position.X <= Size && position.Y <= Size;
-        }
-
         public void Remove(List<Position> positions)
         {
             if (!positions.Any()) return;
@@ -64,16 +59,6 @@ namespace Go.Engine
         public IEnumerable<Position> GetLiberties(Position position)
         {
             return position.Neighbours.Where(IsEmpty);
-        }
-
-        public void PutBlack(Position position)
-        {
-            PutStone(position, BoardState.Black);
-        }
-
-        public void PutWhite(Position position)
-        {
-            PutStone(position, BoardState.White);
         }
 
         public void PutStone(Position position, BoardState color)
